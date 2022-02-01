@@ -1,5 +1,10 @@
 # Prerequisites
 *.d
+# CLion workspace
+.idea/
+
+# CMake build`
+cmake-build-debug/
 
 # Compiled Object files
 *.slo
