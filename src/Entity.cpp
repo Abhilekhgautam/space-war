@@ -3,3 +3,18 @@
 //
 
 #include "Entity.h"
+
+bool Entity ::isActive() const {
+    return m_active;
+}
+size_t Entity ::getId() const {
+    return m_id;
+}
+
+std::string Entity ::getTag() const {
+    return m_tag;
+}
+
+void Entity ::destroy() {
+    m_active = false;
+}
