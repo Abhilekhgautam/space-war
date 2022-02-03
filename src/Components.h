@@ -12,8 +12,8 @@ class CTransform{
 public:
 
     sf::Vector2f pos {0.0f,0.0f};
-    sf::Vector2f vel {1.0f, 1.0f};
-    float angle = 0.0f;
+    sf::Vector2f vel {20.0f, 20.0f};
+    float angle = 2.0f;
 
     CTransform(sf::Vector2f p, sf::Vector2f v, float a)
        :pos(p), vel(v), angle(a){}
@@ -40,7 +40,7 @@ public:
 class CCollision{
 public:
     float radius = 0.0f;
-    CCollision(float r)
+    explicit CCollision(float r)
       :radius(r){}
 
 };
@@ -51,17 +51,20 @@ class CLifespan{
     int remaining =0;
 
 public:
-    CLifespan(int total)
+    explicit CLifespan(int total)
       :total(total),remaining(total){}
 
 };
 
 class CInput{
 public:
-    bool up = false;
-    bool down = false;
-    bool left = false;
-    bool right = false;
+    bool up;
+    bool down;
+    bool left;
+    bool right;
+    bool shoot;
+
+    CInput():up(false),down(false),left(false),right(false),shoot(false){}
 
 };
 
