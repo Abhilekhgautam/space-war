@@ -15,20 +15,22 @@ class Entity {
      bool m_active = true;
      std::string m_tag = "Default";
 
+    Entity(size_t id, const std::string& tag);
+
 public:
 
     std::shared_ptr<CTransform> cTransform;
     std::shared_ptr<CShape> cShape;
+    std::shared_ptr<CInput> cInput;
     std::shared_ptr<CCollision> cCollision;
     std::shared_ptr<CLifespan> cLifespan;
 
     bool isActive() const;
     std::string getTag() const;
-    size_t getId() const;
+   size_t getId() const;
     void destroy();
 
-    Entity(size_t id, const std::string& tag)
-            :m_id(id), m_tag(tag){}
+
 };
 
 
